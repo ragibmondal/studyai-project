@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/static/css/output.css" rel="stylesheet"/>
+        <title>Study Bench</title>
+    </head>
+    <body class="bg-[#3e2a4f]">
+        <nav class="bg-white py-2 px-4 flex items-center justify-between">
+            <a href="/" class="block"><img src="../static/images/logo.png" /></a>
+            <p class="font-bold text-[20px] text-[#374151]">STUDY BENCH</p>
+            <div></div>
+        </nav>
+        <div class="mt-10 flex flex-col justify-center items-center py-2">
+            <form id="explainConceptForm" class="lg:w-[50%] w-[90%] bg-white rounded-lg text-[#374151]">
+                <div class="py-3 px-5">
+                    <h1 class="text-[20px] text-[#111827]">Explain A Concept</h1>
+                    <p class="text-[14px] text-[#4B5563]">Provide explanations, examples and analogies to explain a concept of your choosing</p>
+                    <div id="explainConceptErrorMessageContainer" class="mt-5 bg-red-50 border border-red-500 rounded-md p-2 hidden justify-between items-center">
+                        <p id="explainConceptErrorMessage" class="text-red-500 font-semibold text-[14px]"></p>
+                        <button type="button" id="closeExplainConceptErrorBtn">
+                            <img width="18" height="18" src="https://img.icons8.com/color/18/delete-sign--v1.png" alt="delete-sign--v1"/>
+                        </button>
+                    </div>
+                    <div class="mt-5">
+                        <div>
+                            <label class="form-label block">What concept would you like explained?</label>
+                            <textarea placeholder="e.g Explain object oriented programming" name="concept_name" class="form-control mt-2" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 bg-[#F9FAFB] flex justify-end gap-3 py-3 px-5 rounded-b-lg">
+                    <a class="px-5 py-[7px] rounded-md border border-[#D1D5DB] bg-white text-[14px]" href="/">Back</a>
+                    <button type="button" id="explainConceptSubmitBtn" class="gap-small flex items-center py-[7px] px-4 rounded-md border border-[#544372] bg-[#544372] text-white text-[14px] disabled:bg-[#836b91] disabled:border-[#836b91]">
+                        <span>Explain</span> <img class="hidden" id="spinner" width="20" height="20" src="../static/images/spinner.gif" />
+                    </button>
+                </div>
+            </form>
+            <div id="explainConceptResponseContainer" class="lg:w-[50%] w-[90%] rounded-lg mt-4 hidden">
+                <div class="bg-white py-3 px-5 rounded-t-md">
+                    <h1 class="text-[20px] text-[#111827]">Explain Concept</h1>
+                </div>
+                <div class="bg-[#E7E9EC] py-3 px-5 rounded-b-md text-[14px]">
+                    <div class="response-cover" id="explainConceptResponse"></div>
+                </div>
+            </div>
+        </div>
+        <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="/static/js/main.js"></script>
+    </body>
+</html>
